@@ -115,24 +115,43 @@ console.log('The sum of 1+2+3+-5 is ', sumAll([1, 2, 3, -5]));
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
 function allPositive(numbers) {
-  let positiveNumbers = []; 
+  let positiveNumbers = [];
   for (let i = 0; i < numbers.length; i++) {
     if (numbers[i] > 0) {
-      positiveNumbers.push(numbers[i]); 
+      positiveNumbers.push(numbers[i]);
     }
   }
-  return positiveNumbers; 
+  return positiveNumbers;
 }
 
-console.log(
-  'The positive numbers in this array are 11, 23, 4, 21 ',
-  allPositive([11, -2, 23, 0, -5, 4, -10, 21])
-);
-console.log('There are no positive numbers in this array ' , allPositive([]));
+console.log('The positive numbers in this array are 11, 23, 4, 21 ', allPositive([11, -2, 23, 0, -5, 4, -10, 21]));
+console.log('There are no positive numbers in this array ', allPositive([]));
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or
 //     CodeWars(https://www.codewars.com/). Then describe it
 //     here in a comment, write the function, and test it!
+
+// codewars link is: https://www.codewars.com/kata/59c8b38423dacc7d95000008
+// The goal of this is to create a function that will give steps for adding ingredients/reagents
+// 1 or 2 cannot be added at the same time
+// 3 and 4 cannot be added at the same time
+// 5 and 6 must be selected together
+// 7 or 8 must be selected, at least one or both
+function isValid(formula){
+  if (formula.includes(1) && formula.includes(2)) {
+    return false; }
+    else if (formula.includes(3) && formula.includes(4)) {
+      return false;
+    }
+    else if (formula.includes(5) &! formula.includes(6) ){
+      return false;
+    }
+    else return true;
+  }
+
+console.log('This is true ' , isValid([1,2]));
+
+
 
 // DO NOT MODIFY
 // Used for automated testing
