@@ -66,23 +66,29 @@ console.log('This array is empty so we return the value of: ', getLast([]));
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find
 function find(value, array) {
-  let i = 0; {
-    if (array[i] === value){
+  for (let i = 0; i < array.length; i++) {
+    if (value === array[i]) {
       return true;
-    i++}
-    else {
-      return false;
     }
   }
+  return false; // Return false after the loop if value is not found
 }
-console.log('Is the value of 23 in my array?' , find(23, [34,56,23,44]));
+console.log('Is the value of 23 in my array?', find(23, [34, 56, 23, 44])); // returns true
+console.log('Is the value of 23 in my array?', find(23, [34, 56, 99, 44])); // returns false
 
 // ----------------------
 // Stretch Goals
 // ----------------------
 // 8. Function to check if a letter is the first letter in a
 //    string. Return true if it is, and false otherwise
-function isFirstLetter(letter, string) {}
+function isFirstLetter(letter, string) {
+  
+    if (letter === string.includes(letter,0)); {
+      return true;
+    }
+  }
+   // Return false after the loop if value is not found
+console.log('Does this string start with a? ', isFirstLetter('a', 'Does this string start with a'));
 
 // 9. Function to return the sum of all numbers in an array
 function sumAll(array) {
