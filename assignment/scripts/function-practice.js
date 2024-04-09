@@ -124,7 +124,10 @@ function allPositive(numbers) {
   return positiveNumbers;
 }
 
-console.log('The positive numbers in this array are 11, 23, 4, 21 ', allPositive([11, -2, 23, 0, -5, 4, -10, 21]));
+console.log(
+  'The positive numbers in this array are 11, 23, 4, 21 ',
+  allPositive([11, -2, 23, 0, -5, 4, -10, 21])
+);
 console.log('There are no positive numbers in this array ', allPositive([]));
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or
@@ -137,21 +140,24 @@ console.log('There are no positive numbers in this array ', allPositive([]));
 // 3 and 4 cannot be added at the same time
 // 5 and 6 must be selected together
 // 7 or 8 must be selected, at least one or both
-function isValid(formula){
+function isValid(formula) {
   if (formula.includes(1) && formula.includes(2)) {
-    return false; }
-    else if (formula.includes(3) && formula.includes(4)) {
-      return false;
-    }
-    else if (formula.includes(5) &! formula.includes(6) ){
-      return false;
-    }
-    else return true;
+    return false;
+  } else if (formula.includes(3) && formula.includes(4)) {
+    return false;
+  } else if (
+    (formula.includes(5) && !formula.includes(6)) ||
+    (!formula.includes(5) && formula.includes(6))
+  ) {
+    return false;
+  } else if (!(formula.includes(7) || formula.includes(8))) {
+    return false;
+  } else {
+    return true;
   }
+}
 
-console.log('This is true ' , isValid([1,2]));
-
-
+console.log('This is true ', isValid([1, 2]));
 
 // DO NOT MODIFY
 // Used for automated testing
