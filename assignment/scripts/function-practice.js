@@ -82,21 +82,30 @@ console.log('Is the value of 23 in my array?', find(23, [34, 56, 99, 44])); // r
 // 8. Function to check if a letter is the first letter in a
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
-  
-    if (letter === string.includes(letter,0)); {
-      return true;
-    }
+  if (letter === string.charAt(0)) {
+    return true;
+  } else {
+    return false;
   }
-   // Return false after the loop if value is not found
+}
+
 console.log('Does this string start with a? ', isFirstLetter('a', 'Does this string start with a'));
+console.log('Does this string start with D? ', isFirstLetter('D', 'Does this string start with a'));
+
+
 
 // 9. Function to return the sum of all numbers in an array
 function sumAll(array) {
   let sum = 0;
+  for (let i=0; i < array.length; i++){
+    sum += array[i];
+  }
   // TODO: loop to add items
-
+return sum
   // TODO: return the sum
 }
+console.log('The sum of 4+5+99+-22 is ', sumAll([4,5,99,-22]));
+console.log('The sum of 1+2+3+-5 is ', sumAll([1,2,3,-5]));
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
