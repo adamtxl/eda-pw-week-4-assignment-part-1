@@ -23,27 +23,39 @@ console.log('Testing the greeting', helloName('Arnold'));
 function addNumbers(firstNumber, secondNumber) {
   return firstNumber + secondNumber;
 }
-console.log('Here we test some addition, 6 + 5 should give us 11', addNumbers(6,5));
-
+console.log(
+  'Here we test some addition, 6 + 5 should give us 11',
+  addNumbers(6, 5)
+);
 
 // 4. Function to multiply three numbers & return the result
-function multiplyThree() {}
-
+function multiplyThree(numberOne, numberTwo, numberThree) {
+  return numberOne * numberTwo * numberThree;
+}
+console.log('Multiplying 5, 21, and 13 gives us ', multiplyThree(5, 21, 13));
 // 5. Function that will return true if a number is positive,
 //    or greater than zero, and false otherwise
 function isPositive(number) {
   if (number > 0) {
-    return;
+    return true;
   }
-  return;
+  else
+  return false;
 }
 // Call the function to test each outcome (true & false)
 // Write a separate console.log statement for each outcome
-
+console.log('22 is positive: ', isPositive(22));
+console.log('-1 is a positive: ', isPositive(-1))
 // 6. Function to return the _last_ item in an array. If the
 //    array is empty, return `undefined`.
-function getLast(array) {}
-
+function getLast(array) {
+  const last = array.slice(-1);
+    if last > 0 {
+      return last;
+    }
+  else return 'undefined';
+}
+// console.log('The last word should be waffles: ' , getLast(['never', 'eat', 'soggy', 'waffles']));
 // 7. Function to find a value in an array. Return true if the
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find
