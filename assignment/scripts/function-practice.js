@@ -89,28 +89,46 @@ function isFirstLetter(letter, string) {
   }
 }
 
-console.log('Does this string start with a? ', isFirstLetter('a', 'Does this string start with a'));
-console.log('Does this string start with D? ', isFirstLetter('D', 'Does this string start with a'));
-
-
+console.log(
+  'Does this string start with a? ',
+  isFirstLetter('a', 'Does this string start with a')
+);
+console.log(
+  'Does this string start with D? ',
+  isFirstLetter('D', 'Does this string start with a')
+);
 
 // 9. Function to return the sum of all numbers in an array
 function sumAll(array) {
   let sum = 0;
-  for (let i=0; i < array.length; i++){
+  for (let i = 0; i < array.length; i++) {
     sum += array[i];
   }
   // TODO: loop to add items
-return sum
+  return sum;
   // TODO: return the sum
 }
-console.log('The sum of 4+5+99+-22 is ', sumAll([4,5,99,-22]));
-console.log('The sum of 1+2+3+-5 is ', sumAll([1,2,3,-5]));
+console.log('The sum of 4+5+99+-22 is ', sumAll([4, 5, 99, -22]));
+console.log('The sum of 1+2+3+-5 is ', sumAll([1, 2, 3, -5]));
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
-function allPositive() {}
+function allPositive(numbers) {
+  let positiveNumbers = []; 
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] > 0) {
+      positiveNumbers.push(numbers[i]); 
+    }
+  }
+  return positiveNumbers; 
+}
+
+console.log(
+  'The positive numbers in this array are 11, 23, 4, 21 ',
+  allPositive([11, -2, 23, 0, -5, 4, -10, 21])
+);
+console.log('There are no positive numbers in this array ' , allPositive([]));
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or
 //     CodeWars(https://www.codewars.com/). Then describe it
